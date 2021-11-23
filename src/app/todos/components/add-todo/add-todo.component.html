@@ -1,0 +1,7 @@
+<form (ngSubmit)="addTodo()">
+  <input type="text" class="form-control" placeholder="text" name="text" [(ngModel)]="text" />
+  <br />
+  <button class="btn btn-primary btn-bg" type="submit">Add</button>
+</form>
+
+<p *ngIf="text.length > 0">this is my {{ text }}</p>

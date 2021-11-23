@@ -1,0 +1,24 @@
+<p>arr ay works!</p>
+<input class="form-control" type="text" name="search" [(ngModel)]="searchText" />
+<table class="table" id="myTable">
+  <thead>
+    <tr>
+      <th scope="col" (click)="sort('id')">user id&nbsp;<i class="fa fa-sort"></i></th>
+      <th scope="col" (click)="sort('name')">first&nbsp;<i class="fa fa-sort"></i></th>
+      <th scope="col">Last</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let game of games | filter: searchText | orderBy: key:reverse | paginate: { itemsPerPage: 3, currentPage: p };
+        let i = index
+      "
+    >
+      <td>{{ game.id }}</td>
+      <td>{{ game.name }}</td>
+      <td>{{ game.gender }}</td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

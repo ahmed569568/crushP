@@ -1,0 +1,39 @@
+<form [formGroup]="authCredentialDto" (ngSubmit)="loginUser()" novalidate>
+  <div class="card m-auto mt-5" style="width: 18rem">
+    <div class="card-body bg-light">
+      <h5 class="card-title">Login</h5>
+      <div class="mb-3 form-group">
+        <label for="email" class="form-label">Email </label>
+        <input
+          type="email"
+          class="form-control"
+          email
+          formControlName="email"
+          name="email"
+          placeholder="name@example.com"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+          required
+        />
+      </div>
+      <div class="mb-3 form-group">
+        <label for="password" class="form-label">Password</label>
+        <div class="passForm">
+          <input
+            type="password"
+            class="form-control"
+            password
+            formControlName="password"
+            name="password"
+            placeholder="name@example.com"
+            [type]="fieldTextType ? 'text' : 'password'"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3 form-group">
+        <button class="btn btn-success" type="submit">Login</button>
+      </div>
+    </div>
+  </div>
+</form>

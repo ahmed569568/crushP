@@ -1,0 +1,29 @@
+<p>post works!</p>
+<p>
+  Im Id <span style="background-color: aquamarine; font-size: 24px">{{ itemId }}</span>
+</p>
+<div *ngIf="post">
+  <h1>{{ post.title | slice: 0:50 }}</h1>
+  <p>{{ post.body | slice: 0:50 }}</p>
+</div>
+<div>
+  <ul ngbNav #nav="ngbNav">
+    <li ngbNavItem>
+      <a
+        class="btn"
+        [routerLink]="['address']"
+        [ngClass]="postsService?.currentPage === 'address' ? 'btn-primary' : 'btn-secondary'"
+        >Address</a
+      >
+    </li>
+    <li ngbNavItem>
+      <a
+        class="btn"
+        [routerLink]="['company']"
+        [ngClass]="postsService?.currentPage === 'company' ? 'btn-primary' : 'btn-secondary'"
+        >Company</a
+      >
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>

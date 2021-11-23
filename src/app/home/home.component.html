@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="offset-4 col-4">
+    <ul class="list-group">
+      <ng-container *ngFor="let item of myLists; let i = index">
+        <li class="list-group-item">
+          <button class="btn btn-default" (click)="toggleContent(i)">
+            <i class="fas" [ngClass]="toggleClass(item, 'fa-plus', 'fa-minus')"></i>
+          </button>
+          <p style="display: inline-block" [ngClass]="toggleClass(item, 'text-primary', 'text-danger')">
+            {{ item.title }}
+          </p>
+          <div class="accordion">
+            <div [ngClass]="toggleClass(item, 'closed', 'opened')">
+              <h3>Test {{ i + 1 }}</h3>
+            </div>
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>
+<app-child [myName]="myName"></app-child>

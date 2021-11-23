@@ -1,0 +1,17 @@
+<div>
+  <ng-content></ng-content>
+  <ul class="list-group" *ngFor="let g of games">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{ g.name }}
+      <span class="badge bg-primary rounded-pill">{{ g.gender }}</span>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="list-group" *ngFor="let c of cars">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{ c.name }}
+      <span class="badge bg-primary rounded-pill">{{ c.gender }}</span>
+    </li>
+  </ul>
+</div>

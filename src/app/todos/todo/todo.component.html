@@ -1,0 +1,7 @@
+<div class="todo-item" [ngClass]="{ completed: todo.completed }">
+  <div class="row align-items-center justify-content-around">
+    <input type="checkbox" [checked]="todo.completed" (change)="toggle(todo)" />
+    <p>{{ todo.text }}</p>
+    <button class="btn btn-danger" (click)="delete(todo)">Delete</button>
+  </div>
+</div>
